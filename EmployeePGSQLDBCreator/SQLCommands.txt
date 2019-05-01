@@ -1,0 +1,10 @@
+﻿To create the Employee DB:
+
+CREATE DATABASE "EmployeeDB"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+COMMENT ON DATABASE "EmployeeDB"
+    IS 'A DB containing the Employee info';
