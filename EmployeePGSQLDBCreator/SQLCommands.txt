@@ -8,3 +8,34 @@ CREATE DATABASE "EmployeeDB"
 
 COMMENT ON DATABASE "EmployeeDB"
     IS 'A DB containing the Employee info';
+
+----------------------------------------------------------------------
+EmployeeInfo table ->
+CREATE TABLE public."EmployeeInfo"
+(
+    "EmployeeId" serial NOT NULL,
+    "LastName" character varying(50) NOT NULL,
+    "FirstName" character varying(50),
+    "Gender" "char",
+    "DoB" date,
+    "HireDate" date,
+    "Department" character varying(10),
+    "SupervisorId" integer
+)
+WITH (
+    OIDS = FALSE
+);
+
+ALTER TABLE public."EmployeeInfo"
+    OWNER to postgres;
+COMMENT ON TABLE public."EmployeeInfo"
+    IS 'Table containing the personal info about the employees';
+
+--- Insert Data:
+
+INSERT INTO public."EmployeeInfo"(
+	"LastName", "FirstName", "Gender", "DoB", "HireDate", "Department", "SupervisorId")
+	VALUES ('ABCD', 'EFGH', 'M', '1980-01-01', '2019-01-01', 'HR', 0);
+
+----------------------------------------------------------------------
+
